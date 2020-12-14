@@ -5,19 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Examples/Scenes/Switch Scenes.unity
     guid: 9ce9467b01f36d647ace156faef9cb9f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Examples/Scenes/Primary Monitor.unity
     guid: f9bfdaaf005950544860a1f6efad2925
-  - enabled: 1
+  - enabled: 0
     path: Assets/Examples/Scenes/Multiple Monitors Roundly.unity
     guid: 4bae91f55031b98488c9e668031f7387
-  - enabled: 1
+  - enabled: 0
     path: Assets/Examples/Scenes/Shaders.unity
     guid: f66b67cb0e751dc4ca0251b38bc8638d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Examples/Scenes/Zoom.unity
     guid: f3d41026babadc241b9d0852b0831584
+  - enabled: 0
+    path: Assets/Examples/Scenes/Buffer.unity
+    guid: 36c8d626679d64b46b75b9f1a2923647
+  - enabled: 0
+    path: Assets/Examples/dumb scene.unity
+    guid: 9db63a420f01c9946b91b1c84fb010b4
   m_configObjects: {}

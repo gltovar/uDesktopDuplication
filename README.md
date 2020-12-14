@@ -32,12 +32,23 @@ Usage
 -----
 Attach `uDesktopDuplication/Texture` component to the target object, then its main texture will be replaced with the captured screen. Please see example scenes for more details.
 
+Changelog
+-----
+1.7.2
+- Added new script `TrackDesktopWindow` that allows a WName of a window to track the monitor and generate a normalized rectangle for cropping
+- `TrackDesktopWindow` also supports getting entire monitor if WName is empty using `requestMonitorId`
+- New example scene `WindowTracking` contains a sample of using window tracking with script or with creating a material and render texture
+
+1.7.1
+- Initial commit with changes to support UPM
+
 
 License
 -------
 The MIT License (MIT)
 
 Copyright (c) 2016 hecomi
+Copyright (c) 2020 gltovar
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

@@ -12,6 +12,10 @@ public class BufferExample : MonoBehaviour
     GCHandle handle_;
     IntPtr ptr_ = IntPtr.Zero;
 
+    [SerializeField]
+    RenderTexture renderTexture_;
+    RenderTexture _buffer;
+
     [DllImport("msvcrt.dll", CallingConvention = CallingConvention.Cdecl, SetLastError = false)]
     public static extern IntPtr memcpy(IntPtr dest, IntPtr src, int count);
 
@@ -68,5 +72,19 @@ public class BufferExample : MonoBehaviour
 
         texture_.SetPixels32(pixels_);
         texture_.Apply();
+
+        if (_buffer != null) RenderTexture.ReleaseTemporary(_buffer);
+        _buffer = null;
+
+        if (renderTexture_ != null) {
+            var source = uddTexture.monitor.texture;
+            var dest = renderTexture_;
+
+            //_buffer = RenderTexture.GetTemporary(source.width, source.height);
+            //dest = _buffer;
+
+            Graphics.Blit(source, dest);
+            
+        }
     }
 }
