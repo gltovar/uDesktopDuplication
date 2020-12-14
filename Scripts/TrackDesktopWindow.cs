@@ -71,14 +71,14 @@ public class TrackDesktopWindow : MonoBehaviour
     {
         return normalizeMonitorNamePattern.Replace(monitorName, "");
     }
-    static Rect GetNormalizedRectRelativeToMonitor(RECT globalPos, Monitor targetMonitor)
+    static Rect GetNormalizedRectRelativeToMonitor(RECT globalPos, Monitor targetMonitor, TrackDesktopWindow tdWin)
     {
         Rect result = new Rect();
 
-        result.yMin = (float)(globalPos.Top - targetMonitor.top) / targetMonitor.height;
-        result.yMax = (float)(globalPos.Bottom - targetMonitor.top) / targetMonitor.height;
-        result.xMin = (float)(globalPos.Left - targetMonitor.left) / targetMonitor.width;
-        result.xMax = (float)(globalPos.Right - targetMonitor.left) / targetMonitor.width;
+        result.yMin = ((float)(globalPos.Top - targetMonitor.top) / targetMonitor.height) + ((float)tdWin.topCropPixels/targetMonitor.height);
+        result.yMax = ((float)(globalPos.Bottom - targetMonitor.top) / targetMonitor.height) - ((float)tdWin.bottomCropPixels / targetMonitor.height);
+        result.xMin = ((float)(globalPos.Left - targetMonitor.left) / targetMonitor.width) + ((float)tdWin.leftCropPixels / targetMonitor.width);
+        result.xMax = ((float)(globalPos.Right - targetMonitor.left) / targetMonitor.width) - ((float)tdWin.rightCropPixels / targetMonitor.width);
 
         return result;
     }
@@ -89,10 +89,16 @@ public class TrackDesktopWindow : MonoBehaviour
     public RenderTexture renderTexture;
     
     public string targetWName = "";
+    public int requestMonitorId = MONITOR_ID_INVALID;
     // test names: Calculator, Rocket League (64-bit, DX11, Cooked)
     public Rect normalizedWindowRectangle;
+    public int topCropPixels = 0;
+    public int bottomCropPixels = 0;
+    public int leftCropPixels = 0;
+    public int rightCropPixels = 0;
+    
 
-    public int requestMonitorId = MONITOR_ID_INVALID;
+    
     public ShaderType shaderType;
     
     public int currentMonitorId { get => _currentMonitorId; }
@@ -188,7 +194,7 @@ public class TrackDesktopWindow : MonoBehaviour
         {
             if (trackWindow)
             {
-                normalizedWindowRectangle = GetNormalizedRectRelativeToMonitor(output, monitor);
+                normalizedWindowRectangle = GetNormalizedRectRelativeToMonitor(output, monitor, this);
             }
             else
             {
