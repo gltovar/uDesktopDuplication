@@ -105,7 +105,7 @@ public class TrackDesktopWindow : MonoBehaviour
 
     private const string legacyTexturePropertyName = "_MainTex";
     private const string urpTexturePropertyName = "_BaseMap";
-    private const string hdrpTexturePropertyName = "_BaseMap";
+    private const string hdrpTexturePropertyName = "_BaseColorMap";
 
     private string targetTexturePropertyName;
 
