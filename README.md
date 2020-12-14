@@ -48,6 +48,7 @@ License
 The MIT License (MIT)
 
 Copyright (c) 2016 hecomi
+
 Copyright (c) 2020 gltovar
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
