@@ -21,7 +21,7 @@ Installation
 ------------
 
 This fork allows for installation through UPM
-Just add`https://github.com/gltovar/uDesktopDuplication#upm` to the package manager
+Just add`https://github.com/gltovar/uDesktopDuplication.git#upm` to the package manager
 
 Alternatively the following still works, but only contains changes till 1.7.0
 
