@@ -23,7 +23,7 @@ Installation
 This fork allows for installation through UPM
 Just add this repo + `#upm` to the package manager
 
-Alternatively the following still works
+Alternatively the following still works, but only contains changes till 1.7.0
 
 Please download the latest *uDesktopDuplication.unitypackage* from the [release page](https://github.com/hecomi/uDesktopDuplication/releases).
 
